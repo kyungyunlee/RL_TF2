@@ -30,11 +30,11 @@ class Reinforce(tf.keras.Model):
         return discounted_rewards
 
 
-    def loss(self, states, actions, discounted_rewards):
-        
-        probs = self.call(states)
-        actions = np.expand_dims(actions, 1)
-        action_probs = tf.gather_nd(probs, actions, batch_dims=1)
+    def loss(self, states, actions, discounted_rewards, action_probs):
+        # I can get away without running the forward twice...?  
+        # probs = self.call(states)
+        # actions = np.expand_dims(actions, 1)
+        # action_probs = tf.gather_nd(probs, actions, batch_dims=1)
         loss = tf.math.multiply(tf.math.log(action_probs), discounted_rewards) 
         loss = -tf.reduce_sum(loss)
         return loss 
