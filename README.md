@@ -1,8 +1,7 @@
 # Reinforcement learning algorithms in TF 2
-
+**WIP**
 ### Algorithms
 * REINFORCE - monte-carlo policy gradient 
-$$ \nabla_\theta J(\theta) = \mathbb{E}[G_t \nabla log \pi(A_t|S_t)]$$ 
 ```
 initialize policy parameters
 for N epochs 
@@ -28,8 +27,13 @@ for N epochs
 * PPO 
 
 ### Comments 
-* learning rate seems to matter a lot 
+* So many parameters to tune...
+    * learning rate seems to matter quite a lot 
+    * Initialization also important
 * tf.reduce_sum vs tf.reduce_mean can have an effect 
-
+* What is a good way for finding an optimal model? 
+* How to optimize RL codes?
 
 ### References 
+* [https://github.com/seungeunrho/minimalRL](https://github.com/seungeunrho/minimalRL)
+* [https://github.com/nikhilbarhate99/PPO-PyTorch](https://github.com/nikhilbarhate99/PPO-PyTorch)
